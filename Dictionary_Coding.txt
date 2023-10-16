@@ -1,0 +1,45 @@
+
+#### Dependency management in R with renv
+
+
+#### R documentation with Roxygen2
+
+
+
+#### Version Control on git with gitKraken
+
+Dictionary:
+
+workspace		your git account e.g. pollhammerth/ (= my home directory)
+repository		a folder where your code is stored remote (online) and/or local
+commit			'snapshot' in time of all the files in one of my folders (repository)
+branches		different folder (repository) versions existing parallel in time
+pull request		propose to merge a branch to the master (merge conflicts may occur)
+
+
+Everyday coding workflow with gitkraken:
+
+1. gitkraken: check if local repository matches remote repository and if not, pull the updates.
+
+2. RStudio: inside the local repository, work on the code as usual
+
+3.a when finished, check gitkraken and add a commit message (describe what you changed)
+
+3.b stage the changed files
+
+3.c commit the changes
+
+3.d push the new local commit to the remote repository or
+
+optional:
+
+3.d' create a branch after the local commit and push it to the remote repo
+
+4.a create pull request in gitkraken (or github) e.g. from branch_1 to main
+
+4.b open pull request and click merge pull request
+
+4.c pull the updated main remote repo to the local main repo
+
+4.d under LOCAL and REMOTE click delete branch_1
+
