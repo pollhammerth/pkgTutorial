@@ -28,7 +28,7 @@ load_all(".")
 
 # 3
 # start a new R project in RStudio
-# menu: "new project" -> "in existing directory" -> choose ./MAMMOT_R_package/
+# menu: "new project" -> "in existing directory" -> choose ./MAMMOTerrace/
 
 # 4
 # add help files (documentation)
