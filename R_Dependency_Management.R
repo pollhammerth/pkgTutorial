@@ -12,29 +12,50 @@ for (i in 1:length(packages)) { eval(parse(text = paste0("require('",packages[i]
 
 # initialize a new RStudio Project library (local environment)
 renv::init()
-
 # will create 4 files
 # .Rprofile
 # renv.lock
 # renv/activate.R
 # renv/library
-
 # library path should be automatically included in .gitignore -> check!
-#first three files should be put in 'version control'
+# first three files should be put in 'version control'
 
+# renv can be set to either search the whole project directory for needed packages, or only check which packages are mentioned in DESCRIPTION
+# I like to chose the latter. So keep DESCRIPTION up to date!
 
 # save a snapshot of the current library status with
 renv::snapshot()
 
-# the snapshot will be stored unter 
-# renv.lock
+# the snapshot will be stored under 
+# renv.lock # put it e.g. on git (by commenting in .gitignore), if you want to share it with others
 
 # restore a previous library status with
 renv::restore()
+# this can be used, to restore the library status on a different computer. How to:
+# put renv.lock in the project folder
+# load the RStudio project (incl. setwd())
+# renv::init()
+# renv::restore() # will take the library from renv.lock file
 
 
-# renv can be set to either search the whole project directory for needed packages, or only check which packages are mentioned in DESCRIPTION
-# I like to chose the latter. So keep DESCRIPTION up to date!
+
+
+
+#### ISSUES::SOLUTIONS #########################################################
+
+# ISSUE 01
+# when trying to install a new package from cran ( renv::install() ), an error occured
+# DIAGNOSTICS:
+getOption("download.file.method")
+renv:::renv_download_method()
+# are they not the same?
+# SOULTION:
+# set RENV_DOWNLOAD_METHOD to the one replied by getOption. Which here was 'libcurl' (whereas renv was 'curl')
+# and do this BEFORE activating renv! in the Project directory, open .Rprofile
+# before "source("renv/activate.R")" add the line "Sys.setenv(RENV_DOWNLOAD_METHOD = "libcurl")"
+
+
+
 
 
 
