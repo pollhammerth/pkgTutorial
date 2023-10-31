@@ -58,6 +58,13 @@ renv:::renv_download_method()
 
 
 
+#### Session Info :: to check which packages are currently attached ############
+
+install.packages("sessioninfo")
+require(sessioninfo)
+sessionInfo()
+
+
 
 
 
