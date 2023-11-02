@@ -62,6 +62,7 @@ renv:::renv_download_method()
 
 install.packages("sessioninfo")
 require(sessioninfo)
+session_info()
 sessionInfo()
 
 
